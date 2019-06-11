@@ -1,0 +1,13 @@
+name: Xpackets
+main: xyz.xpulse.Xpackets.bukkit.Xpackets
+version: 2.0
+description: Looks for packets from a bungee host to allow per world teleporting
+author: [Xpulse]
+website: https://xpulse.xyz
+api-version: 1.13
+
+commands:
+  xpackets:
+    description: Xpackets command
+    usage: /<command> <reload:list:send>
+  
