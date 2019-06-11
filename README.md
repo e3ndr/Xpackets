@@ -38,4 +38,3 @@ ArrayList<ClientConnection> cc = NetworkServer#clients;[/code]
 **TODO:**
 API
 public key crypto
-Integrate with warp plugins, suggest a plugin in the comments.
