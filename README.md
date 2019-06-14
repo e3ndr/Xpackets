@@ -18,8 +18,8 @@ If you do need help i'm willing to assist with anything, however if you just say
 
 **Commands:**
 /server <world>
-/xpackets <send:list:reload> [player] *(Requires bukkit* *xpackets.admin)*
-/server reload *(Requires bungee xpackets.admin)*
+/xpackets <send:list:reload> [player] _(Requires bukkit xpackets.admin)_
+/server reload _(Requires bungee xpackets.admin)_
 
 **API:**
 Want to integrate?
