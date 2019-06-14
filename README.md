@@ -26,15 +26,16 @@ Want to integrate?
 Currently you will have to add the jar to your build path manually (no maven) and the javadoc comments are non existent.
 
 *You should never attempt to send a packet directly, as the packets and names will change version to version.*
-[code=Java]XPUtils.sendPlayer(UUID, worldName, NetworkClient);
+```java
+XPUtils.sendPlayer(UUID, worldName, NetworkClient);
 XPUtils.sendPlayer(UUID, worldName, NetworkServer);
 XPUtils.getWorldByName(name);
 World w = XPUtils.configuredWorlds();
 
 NetworkServer ns = BungeeVars.networkserver;
 NetworkClient ns = Variables.networkclient;
-ArrayList<ClientConnection> cc = NetworkServer#clients;[/code]
+ArrayList<ClientConnection> cc = NetworkServer#clients;```
 
 **TODO:**
-API
-public key crypto
+API documentation
+security
