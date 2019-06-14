@@ -34,7 +34,8 @@ World w = XPUtils.configuredWorlds();
 
 NetworkServer ns = BungeeVars.networkserver;
 NetworkClient ns = Variables.networkclient;
-ArrayList<ClientConnection> cc = NetworkServer#clients;```
+ArrayList<ClientConnection> cc = NetworkServer#clients;
+```
 
 **TODO:**
 API documentation
