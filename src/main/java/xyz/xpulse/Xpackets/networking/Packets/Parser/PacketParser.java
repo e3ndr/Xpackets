@@ -14,7 +14,7 @@ package xyz.xpulse.Xpackets.networking.Packets.Parser;
 public interface PacketParser {
 	
 	/**
-	 * Process.
+	 * Process a packet.
 	 *
 	 * @param payload the payload
 	 * @param id the id

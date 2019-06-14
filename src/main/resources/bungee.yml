@@ -1,6 +1,6 @@
 name: Xpackets
 main: xyz.xpulse.Xpackets.bungee.Xpackets
-version: 2.0
+version: 3.0
 description: Looks for packets from a bungee host to allow per world teleporting
 author: [Xpulse]
 website: https://xpulse.xyz

@@ -1,0 +1,6 @@
+# Port to listen on.
+port: 8100
+# Disable this if you are using this as a dependency and not for per world switching.
+enable-per-world-switching: true
+# Debug info, probably want this disabled.
+print-debug: false

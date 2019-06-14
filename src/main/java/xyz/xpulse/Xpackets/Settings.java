@@ -17,6 +17,8 @@ import xyz.xpulse.Xpackets.networking.Packets.NetworkPacket;
  * The Class Settings.
  */
 public class Settings {
+	/** The version. */
+	public static final String version = "3.0";
 	
 	/** The worlds. */
 	public static ArrayList<World> worlds = new ArrayList<World>();

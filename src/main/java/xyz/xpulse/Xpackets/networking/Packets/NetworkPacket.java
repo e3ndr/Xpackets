@@ -16,14 +16,14 @@ import xyz.xpulse.Xpackets.networking.Packets.Parser.PacketParser;
 public interface NetworkPacket {
 	
 	/**
-	 * To byte.
+	 * Converts the packet to byte.
 	 *
 	 * @return the byte[]
 	 */
 	public byte[] toByte();
 	
 	/**
-	 * Creates the.
+	 * Creates the packet.
 	 *
 	 * @param args the args
 	 */

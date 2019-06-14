@@ -7,6 +7,8 @@
  */
 package xyz.xpulse.Xpackets.bungee;
 
+import com.esotericsoftware.minlog.Log;
+
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 import xyz.xpulse.Xpackets.ServerType;
@@ -30,13 +32,16 @@ public class Xpackets extends Plugin {
 	 */
 	@Override
 	public void onEnable() {
+		Log.set(Log.LEVEL_NONE);
 		instance = this;
 		Settings.serverType = ServerType.Bungee;
-		BungeeConfig.init();
+		BungeeConfig.init(this);
 		server = new NetworkServer();
 		server.start();
 
-		ProxyServer.getInstance().getPluginManager().registerCommand(this, new CommandServer("server"));
+		if (BungeeConfig.world_switching) {
+			ProxyServer.getInstance().getPluginManager().registerCommand(this, new CommandServer("server"));
+		}
 	}
 	
 	/* (non-Javadoc)

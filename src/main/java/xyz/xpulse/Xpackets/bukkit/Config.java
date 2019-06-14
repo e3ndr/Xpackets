@@ -36,6 +36,9 @@ public class Config {
 	/** The Address. */
 	public static String Address = null;
 	
+	/** The print debug. */
+	public static boolean print_debug = false;
+	
 	/** The bind ip. */
 	public static String BIND_IP = "localhost";
 	
@@ -46,7 +49,7 @@ public class Config {
 	private static File file = new File("plugins/Xpackets/config.yml");
 	
 	/**
-	 * Inits the.
+	 * Inits the config.
 	 */
 	public static void init() {
 		if (!file.exists()) {
@@ -57,6 +60,8 @@ public class Config {
 			yml.set("worlds.world.meta", new String[] {"This is the spoopy text"});
 			yml.set("worlds.world.stylizedname", "&CThe &7Formatted &R&BName");
 			yml.set("bind-ip", "127.0.0.1");
+			yml.set("print-debug", false);
+			
 			try {
 				yml.save(file);
 			} catch (IOException e) {
@@ -70,6 +75,7 @@ public class Config {
 		Address = yml.getString("ip");
 		Timeout = yml.getInt("timeout");
 		BIND_IP = yml.getString("bind-ip");
+		print_debug = yml.getBoolean("print-debug", false);
 		
 		if (BIND_IP.contains(":")) {
 			yml.set("bind-ip", BIND_IP.split(":")[0]);

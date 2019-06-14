@@ -94,7 +94,7 @@ public class NetworkServer {
 				@Override
 				public void received(Connection conn, Object recieved) {
 					if ((recieved instanceof Ping) || (recieved instanceof KeepAlive)) return;
-					System.out.println("C: " + new String((byte[]) recieved, StandardCharsets.UTF_8));
+					if (BungeeConfig.print_debug) System.out.println("C: " + new String((byte[]) recieved, StandardCharsets.UTF_8));
 					try {
 						String rec = new String((byte[]) recieved, StandardCharsets.UTF_8);
 						JSONObject jo = (JSONObject) new JSONParser().parse(rec);
@@ -104,6 +104,8 @@ public class NetworkServer {
 							NetworkPacket p = new PacketWorldList();
 							p.create((Object) Settings.worlds.toArray(new World[0]));
 							conn.sendTCP(p.toByte());
+							return;
+						} else if (type.equals("AddWorld") && !BungeeConfig.world_switching) {
 							return;
 						}
 						
@@ -129,7 +131,7 @@ public class NetworkServer {
 	}
 	
 	/**
-	 * Send.
+	 * Send a packet to an ID.
 	 *
 	 * @param msg the msg
 	 * @param id the id
@@ -139,7 +141,7 @@ public class NetworkServer {
 	}
 	
 	/**
-	 * Gets the ip.
+	 * Gets the ip of an ID.
 	 *
 	 * @param id the id
 	 * @return the ip
@@ -152,7 +154,7 @@ public class NetworkServer {
 	}
 	
 	/**
-	 * Checks if is connected.
+	 * Checks if the server is connected.
 	 *
 	 * @return true, if is connected
 	 */
@@ -162,7 +164,7 @@ public class NetworkServer {
 	}
 	
 	/**
-	 * Close.
+	 * Close the server.
 	 */
 	public void close() {
 		server.close();
@@ -171,6 +173,7 @@ public class NetworkServer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		clients = new ArrayList<ClientConnection>();
+		clients.clear();
+		Settings.packets.clear();
 	}
 }

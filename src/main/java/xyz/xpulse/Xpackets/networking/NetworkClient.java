@@ -21,6 +21,7 @@ import com.esotericsoftware.kryonet.FrameworkMessage.Ping;
 import com.esotericsoftware.kryonet.Listener;
 
 import xyz.xpulse.Xpackets.Settings;
+import xyz.xpulse.Xpackets.bukkit.Config;
 import xyz.xpulse.Xpackets.networking.Packets.NetworkPacket;
 import xyz.xpulse.Xpackets.networking.Packets.PacketIncommingPlayer;
 import xyz.xpulse.Xpackets.networking.Packets.PacketWorldList;
@@ -68,7 +69,7 @@ public class NetworkClient {
 					} catch (ParseException e) {
 						return;
 					}
-					System.out.println("S: " + new String((byte[]) recieved, StandardCharsets.UTF_8));
+					if (Config.print_debug) System.out.println("S: " + new String((byte[]) recieved, StandardCharsets.UTF_8));
 				}
 			});
 			client.connect(timeout, address, port);
@@ -81,7 +82,7 @@ public class NetworkClient {
 	}
 	
 	/**
-	 * Send.
+	 * Send a packet.
 	 *
 	 * @param msg the msg
 	 */
@@ -90,14 +91,14 @@ public class NetworkClient {
 	}
 	
 	/**
-	 * Close.
+	 * Close the client.
 	 */
 	public void close() {
 		client.close();
 	}
 
 	/**
-	 * Checks if is connected.
+	 * Checks if the client is connected.
 	 *
 	 * @return true, if is connected
 	 */

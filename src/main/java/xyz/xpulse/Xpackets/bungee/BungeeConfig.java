@@ -7,55 +7,34 @@
  */
 package xyz.xpulse.Xpackets.bungee;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-
+import net.md_5.bungee.api.plugin.Plugin;
+import net.md_5.bungee.config.Configuration;
+import xyz.xpulse.Xpackets.Util.YMLConfig;
 
 /**
  * The Class BungeeConfig.
  */
 public class BungeeConfig {
-	
-	/** The file. */
-	private static File file = new File("plugins/Xpackets/config.txt");
-	
 	/** The port. */
 	public static int port = 8100;
 	
+	/** The world switching. */
+	public static boolean world_switching = true;
+	
+	/** The print debug. */
+	public static boolean print_debug = false;
+	
 	/**
 	 * Inits the.
+	 *
+	 * @param plugin the plugin
 	 */
-	public static void init() {
-		try {
-			if (!file.exists()) {
-				new File("plugins/Xpackets/").mkdirs();
-				PrintWriter writer = new PrintWriter(file, "UTF-8");
-				writer.println("port: 8100");
-				writer.close();
-			}
-			BufferedReader reader = new BufferedReader(new FileReader(file));
-			String textFile = "";
-			String currentLine = reader.readLine();
-			while (currentLine != null) {
-	    	        textFile += currentLine = "\n";
-	    	        currentLine = reader.readLine();
-			}
-			reader.close();
-			
-			String[] text = textFile.split("\n");
-			
-			for (String s : text ) {
-				if (s.contains("port:")) {
-					String[] config = s.split(":");
-					port = Integer.parseInt(config[1].replace(" ", ""));
-				}
-			}
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public static void init(Plugin plugin) {
+		YMLConfig yml = new YMLConfig(plugin);
+		Configuration config = yml.getConfig();
+		
+		port = config.getInt("port", 8100);
+		world_switching = config.getBoolean("enable-per-world-switching", true);
+		print_debug = config.getBoolean("print-debug", false);
 	}
 }

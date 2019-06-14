@@ -15,6 +15,8 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.esotericsoftware.minlog.Log;
+
 import xyz.xpulse.Xpackets.ServerType;
 import xyz.xpulse.Xpackets.Settings;
 import xyz.xpulse.Xpackets.XPUtils;
@@ -37,6 +39,7 @@ public class Xpackets extends JavaPlugin {
 	 */
 	@Override
 	public void onEnable() {
+		Log.set(Log.LEVEL_NONE);
 		instance = this;
 		Settings.serverType = ServerType.Bukkit;
 		Config.init();
