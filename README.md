@@ -14,7 +14,7 @@ Caveats:
 Read through this entirely and set the configs PROPERLY, don't just say "doesn't work."
 If you do need help i'm willing to assist with anything, however if you just say "bad plugin" or "no work" or "fortnite is better than minecraft" I will not respond.
 
-**Working deployment: **mc.xpulse.xyz check by running */xpackets*
+**Working deployment:** _mc.xpulse.xyz check_ by running _/xpackets_
 
 **Commands:**
 /server <world>
