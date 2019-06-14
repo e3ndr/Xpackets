@@ -17,9 +17,9 @@ If you do need help i'm willing to assist with anything, however if you just say
 **Working deployment:** `mc.xpulse.xyz` check by running `/xpackets`
 
 **Commands:**
-/server <world>
-/xpackets <send:list:reload> [player] _(Requires bukkit xpackets.admin)_
-/server reload _(Requires bungee xpackets.admin)_
+`/server <world>`
+`/xpackets <send:list:reload> [player]` _(Requires bukkit xpackets.admin)_
+`/server reload` _(Requires bungee xpackets.admin)_
 
 **API:**
 Want to integrate?
