@@ -1,3 +1,5 @@
+***This plugin has no more support behind it, maybe one day it'll be updated.***
+
 Xpackets is a plugin that allows users to switch between worlds on a bungee server, that's right. WORLDS! ~~While the xpulse team needed this out of necessity~~ I thought it could be useful to anyone else out there!
 
 Rather than `/server serv1` and then running `/warp interestingplace`.
